@@ -53,7 +53,7 @@ export default function SignUp() {
           <div className="button-wrapper">
             <button
               style={{
-                width: "100%",
+                width: "200px",
                 height: "50px",
                 marginTop: "20px",
                 fontWeight: "bold",
@@ -65,7 +65,7 @@ export default function SignUp() {
             </button>
             <button
               style={{
-                width: "100%",
+                width: "200px",
                 height: "50px",
                 marginTop: "20px",
                 fontWeight: "bold",

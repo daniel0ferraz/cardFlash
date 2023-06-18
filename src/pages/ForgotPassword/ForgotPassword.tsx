@@ -18,6 +18,14 @@ export default function ForgotPassword() {
       <div className="form_container">
         <div className="form">
           <h1>Recupera senha</h1>
+          <p
+            style={{
+              marginTop: "5px",
+              paddingBottom: "15px",
+            }}
+          >
+            Para recuperar a senha digite o e-mail usado no cadastro
+          </p>
 
           <div className="form-group">
             <Input
@@ -33,20 +41,7 @@ export default function ForgotPassword() {
           <div className="button-wrapper">
             <button
               style={{
-                width: "100%",
-                height: "50px",
-                marginTop: "20px",
-                fontWeight: "bold",
-                fontSize: "16px",
-              }}
-              onClick={() => resetPassword(userData.email)}
-            >
-              {loading ? "Carregando..." : "Recuperar"}
-            </button>
-
-            <button
-              style={{
-                width: "100%",
+                width: "200px",
                 height: "50px",
                 marginTop: "20px",
                 fontWeight: "bold",
@@ -55,6 +50,18 @@ export default function ForgotPassword() {
               onClick={() => navigate("/")}
             >
               Voltar
+            </button>
+            <button
+              style={{
+                width: "200px",
+                height: "50px",
+                marginTop: "20px",
+                fontWeight: "bold",
+                fontSize: "16px",
+              }}
+              onClick={() => resetPassword(userData.email)}
+            >
+              {loading ? "Carregando..." : "Recuperar"}
             </button>
           </div>
         </div>
