@@ -1,13 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import Input from "../../components/Input/Input";
-import "./styles.css";
+import "../SignIn/styles.css";
 import { UserContext } from "../../context/user";
 import { useNavigate } from "react-router-dom";
 
-export default function SignIn() {
+export default function SignUp() {
   const navigate = useNavigate();
-  const { user, signIn, loading } = useContext(UserContext);
-
+  const { user, signUp, loading } = useContext(UserContext);
   const [userData, setUserData] = useState({
     email: "",
     password: "",
@@ -21,11 +20,13 @@ export default function SignIn() {
     return <p>carregando ...</p>;
   }
 
+  console.log("user", user);
+
   return (
     <>
       <div className="form_container">
         <div className="form">
-          <h1>Flash Cards</h1>
+          <h1>Registrar-se</h1>
 
           <div className="form-group">
             <Input
@@ -49,22 +50,32 @@ export default function SignIn() {
             />
           </div>
 
-          <div className="form-link">
-            <a onClick={() => navigate("/forgotpassword")}>Esqueci a senha</a>
-            <a onClick={() => navigate("/signup")}>Crie uma nova conta</a>
+          <div className="button-wrapper">
+            <button
+              style={{
+                width: "100%",
+                height: "50px",
+                marginTop: "20px",
+                fontWeight: "bold",
+                fontSize: "16px",
+              }}
+              onClick={() => navigate("/")}
+            >
+              Voltar
+            </button>
+            <button
+              style={{
+                width: "100%",
+                height: "50px",
+                marginTop: "20px",
+                fontWeight: "bold",
+                fontSize: "16px",
+              }}
+              onClick={() => signUp(userData.email, userData.password)}
+            >
+              {loading ? "Carregando..." : "Criar conta"}
+            </button>
           </div>
-          <button
-            style={{
-              width: "100%",
-              height: "50px",
-              marginTop: "20px",
-              fontWeight: "bold",
-              fontSize: "16px",
-            }}
-            onClick={() => signIn(userData.email, userData.password)}
-          >
-            {loading ? "Carregando..." : "Entrar"}
-          </button>
         </div>
       </div>
     </>

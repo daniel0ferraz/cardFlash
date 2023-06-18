@@ -27,3 +27,23 @@ h1 {
 .form-group {
   margin-bottom: 20px;
 }
+
+.form-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-link,
+a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
